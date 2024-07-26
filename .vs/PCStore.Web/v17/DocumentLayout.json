@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\",
+  "WorkspaceRootPath": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\hrust\\source\\repos\\pcstore.web\\pcstore.web.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\sharipovrr\\source\\repos\\pcstore.web\\pcstore.web.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\sharipovrr\\source\\repos\\pcstore.web\\pcstore.web.core\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Program.cs",
-              "RelativeDocumentMoniker": "PCStore.Web.Core\\Program.cs",
-              "ToolTip": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Program.cs",
-              "RelativeToolTip": "PCStore.Web.Core\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "PCStore.Web.Core\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Models\\Product.cs",
+              "RelativeToolTip": "PCStore.Web.Core\\Models\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T18:27:15.389Z",
+              "WhenOpened": "2024-07-26T10:29:34.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Models\\User.cs",
+              "RelativeDocumentMoniker": "PCStore.Web.Core\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Models\\User.cs",
+              "RelativeToolTip": "PCStore.Web.Core\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T09:08:34.974Z",
               "EditorCaption": ""
             }
           ]
