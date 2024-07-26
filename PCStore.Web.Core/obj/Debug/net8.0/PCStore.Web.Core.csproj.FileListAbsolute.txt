@@ -1,0 +1,7 @@
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.Core\obj\Debug\net8.0\PCStore.Web.Core.csproj.AssemblyReference.cache
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.Core\obj\Debug\net8.0\PCStore.Web.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.Core\obj\Debug\net8.0\PCStore.Web.Core.AssemblyInfoInputs.cache
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.Core\obj\Debug\net8.0\PCStore.Web.Core.AssemblyInfo.cs
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.Core\obj\Debug\net8.0\PCStore.Web.Core.csproj.CoreCompileInputs.cache
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.Core\obj\Debug\net8.0\PCStore.Web.Core.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.Core\obj\Debug\net8.0\PCStore.Web.Core.sourcelink.json
