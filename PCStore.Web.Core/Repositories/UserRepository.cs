@@ -1,23 +1,47 @@
-﻿using Core.Data;
-using Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using PCStore.Web.Core.Data;
+using PCStore.Web.Core.Models;
 
 namespace Core.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly List<User> _users;
-        public UserRepository()
+        private readonly ApplicationDBContext _dbContext;
+
+        public UserRepository(ApplicationDBContext dbContext)
         {
-            _users = DB.users;
+            _dbContext = dbContext;
         }
 
-        public User GetUserByLogin(string login)
+        public async Task<User> CreateAsync(User user)
         {
-            var user = _users.FirstOrDefault(s => string.Equals(s.Login, login));
-            if (user == null)
-            {
-                throw new Exception($"User with login:{login} not found");
-            }
+            await _dbContext.Users.AddAsync(user);
+            await _dbContext.SaveChangesAsync();
+            return user;
+        }
+
+        public async Task<bool> DeleteAsync(Guid id)
+        {
+            var user = await GetAsync(id);
+            _dbContext.Users.Remove(user);
+            await _dbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<List<User>> GetAllAsync()
+        {
+            return await _dbContext.Users.ToListAsync();
+        }
+
+        public async Task<User> GetAsync(Guid id)
+        {
+            return await _dbContext.Users.FindAsync(id);
+        }
+
+        public async Task<User> UpdateAsync(User user)
+        {
+            _dbContext.Users.Update(user);
+            await _dbContext.SaveChangesAsync();
             return user;
         }
     }

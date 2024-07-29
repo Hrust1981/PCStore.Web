@@ -3,3 +3,4 @@
 ################################################################################
 
 /PCStore.Web.Core/appsettings.json
+/PCStore.Web.Core/appsettings.Development.json

@@ -1,10 +1,9 @@
-﻿using Core.Entities;
+﻿using PCStore.Web.Core.Models;
 
 namespace Core.Repositories
 {
     public interface IShoppingCartRepository
     {
-        ShoppingCart GetByUserId(Guid id);
-        public Dictionary<Guid, int> QuantityInStock { get; set; }
+        Task<ShoppingCart> GetCartByIdAsync(Guid id);
     }
 }

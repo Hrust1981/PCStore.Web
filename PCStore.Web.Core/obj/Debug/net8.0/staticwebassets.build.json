@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "QFc3AnSOmQerCVK21pbVmYK0ShXytp45n5YXbmpVnTk=",
+  "Source": "PCStore.Web.Core",
+  "BasePath": "_content/PCStore.Web.Core",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

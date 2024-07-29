@@ -1,23 +1,19 @@
-﻿namespace PCStore.Web.Core.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace PCStore.Web.Core.Models
 {
     public class ShoppingCart
     {
-        // For testing
-        public ShoppingCart(Guid id, List<Product> products, Guid userId)
-        {
-            UserId = id;
-            Products = products;
-            UserId = userId;
-        }
-
-        public ShoppingCart(List<Product> products, Guid userId)
+        public ShoppingCart()
         {
             Id = Guid.NewGuid();
-            Products = products;
-            UserId = userId;
         }
 
-        public Guid UserId { get; set; }
-        public List<Product> Products { get; set; }
+        [Key]
+        public Guid Id { get; set; }
+        public decimal TotalAmount { get; set; }
+        public Guid OrderId { get; set; }
+        public Order Order { get; set; }
+        public List<Product>? Products { get; set; }
     }
 }

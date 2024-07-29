@@ -1,27 +1,20 @@
-﻿using Core.Data;
-using Core.Entities;
+﻿using PCStore.Web.Core.Data;
+using PCStore.Web.Core.Models;
 
 namespace Core.Repositories
 {
     public class ShoppingCartRepository : IShoppingCartRepository
     {
-        private readonly List<ShoppingCart> _carts;
-        public ShoppingCartRepository()
+        private readonly ApplicationDBContext _dbContext;
+
+        public ShoppingCartRepository(ApplicationDBContext dbContext)
         {
-            _carts = DB.shoppingCarts;
-            QuantityInStock = new();
+            _dbContext = dbContext;
         }
 
-        public Dictionary<Guid, int> QuantityInStock { get; set; }
-
-        public ShoppingCart GetByUserId(Guid userId)
+        public async Task<ShoppingCart> GetCartByIdAsync(Guid id)
         {
-            var cart = _carts.FirstOrDefault(c => c.UserId == userId);
-            if (cart == null)
-            {
-                throw new Exception($"Shopping cart with ID:{userId} not found");
-            }
-            return cart;
+            return await _dbContext.ShoppingCarts.FindAsync(id);
         }
     }
 }
