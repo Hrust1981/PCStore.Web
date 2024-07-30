@@ -51,7 +51,7 @@ namespace PCStore.Web.Core.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<APIResponse>> GetAllUsers()
         {
             try
@@ -59,8 +59,8 @@ namespace PCStore.Web.Core.Controllers
                 var users = await _userService.GetAllUsersAsync();
                 if (users == null)
                 {
-                    _response.StatusCode = HttpStatusCode.BadRequest;
-                    return BadRequest(_response);
+                    _response.StatusCode = HttpStatusCode.NotFound;
+                    return NotFound(_response);
                 }
                 _response.Result = users;
                 _response.StatusCode = HttpStatusCode.OK;
@@ -78,27 +78,93 @@ namespace PCStore.Web.Core.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> CreateUser(User user)
+        public async Task<ActionResult<APIResponse>> CreateUser(User user)
         {
-            return Ok(await _userService.CreateUserAsync(user));
+            try
+            {
+                if (user == null)
+                {
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    return BadRequest(_response);
+                }
+                var createdUser = await _userService.CreateUserAsync(user);
+                if (createdUser == null)
+                {
+                    _response.StatusCode = HttpStatusCode.NotFound;
+                    return NotFound(_response);
+                }    
+                _response.Result = createdUser;
+                _response.StatusCode = HttpStatusCode.OK;
+                return Ok(_response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess=false;
+                _response.ErrorMessages = [ex.ToString()];
+            }
+            return _response;
         }
 
         [HttpPut("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateUser(Guid id, User user)
+        public async Task<ActionResult<APIResponse>> UpdateUser(Guid id, User user)
         {
-            return Ok(await _userService.UpdateUserAsync(id, user));
+            try
+            {
+                if (id == null || user == null)
+                {
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    return BadRequest(_response);
+                }
+                var updatableUser = await _userService.UpdateUserAsync(id, user);
+                if (updatableUser == null)
+                {
+                    _response.StatusCode = HttpStatusCode.NotFound;
+                    return NotFound(_response);
+                }
+                _response.Result = updatableUser;
+                _response.StatusCode = HttpStatusCode.OK;
+                return Ok(_response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = [ex.ToString()];
+            }
+            return _response;
         }
 
         [HttpDelete("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> DeleteUser(Guid id)
+        public async Task<ActionResult<APIResponse>> DeleteUser(Guid id)
         {
-            return Ok(await _userService.DeleteUserAsync(id));
+            try
+            {
+                if (id == null)
+                {
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    return BadRequest(_response);
+                }
+                var deletableUser = await _userService.DeleteUserAsync(id);
+                if (!deletableUser)
+                {
+                    _response.StatusCode = HttpStatusCode.NotFound;
+                    return NotFound(_response);
+                }
+                _response.Result = deletableUser;
+                _response.StatusCode = HttpStatusCode.OK;
+                return Ok(_response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = [ex.ToString()];
+            }
+            return _response;
         }
     }
 }

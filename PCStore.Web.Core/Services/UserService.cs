@@ -24,7 +24,7 @@ namespace PCStore.Web.Core.Services
 
         public async Task<bool> DeleteUserAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _userRepository.DeleteAsync(id);
         }
 
         public async Task<List<User>> GetAllUsersAsync()
@@ -40,10 +40,7 @@ namespace PCStore.Web.Core.Services
         public async Task<User> UpdateUserAsync(Guid id, User user)
         {
             var updatableUser = await _userRepository.GetAsync(id);
-            if (updatableUser != null)
-            {
-                updatableUser = _mapper.Map<User>(user);
-            }
+            updatableUser = _mapper.Map<User>(user);
             return await _userRepository.UpdateAsync(updatableUser);
         }
     }

@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCStore.Web.Core", "PCStore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCStore.Web.Host", "PCStore.Web.Host\PCStore.Web.Host.csproj", "{1FC31DDC-CC4D-439A-B1C4-9B6FD67D751E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCStore.Web.Api", "PCStore.Web.Api\PCStore.Web.Api.csproj", "{556D9191-5DBB-4514-B450-22EEBFB11FD9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{1FC31DDC-CC4D-439A-B1C4-9B6FD67D751E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FC31DDC-CC4D-439A-B1C4-9B6FD67D751E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FC31DDC-CC4D-439A-B1C4-9B6FD67D751E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{556D9191-5DBB-4514-B450-22EEBFB11FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{556D9191-5DBB-4514-B450-22EEBFB11FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{556D9191-5DBB-4514-B450-22EEBFB11FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{556D9191-5DBB-4514-B450-22EEBFB11FD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

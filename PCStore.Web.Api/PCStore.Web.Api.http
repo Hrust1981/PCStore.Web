@@ -1,6 +1,0 @@
-@PCStore.Web.Api_HostAddress = http://localhost:5219
-
-GET {{PCStore.Web.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
