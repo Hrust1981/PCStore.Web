@@ -29,7 +29,7 @@ namespace PCStore.Web.Core.Services
 
         public async Task<List<User>> GetAllUsersAsync()
         {
-            throw new NotImplementedException();
+            return await _userRepository.GetAllAsync();
         }
 
         public async Task<User> GetUserByIdAsync(Guid id)
@@ -39,7 +39,12 @@ namespace PCStore.Web.Core.Services
 
         public async Task<User> UpdateUserAsync(Guid id, User user)
         {
-            throw new NotImplementedException();
+            var updatableUser = await _userRepository.GetAsync(id);
+            if (updatableUser != null)
+            {
+                updatableUser = _mapper.Map<User>(user);
+            }
+            return await _userRepository.UpdateAsync(updatableUser);
         }
     }
 }

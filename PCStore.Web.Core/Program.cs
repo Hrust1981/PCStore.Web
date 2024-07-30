@@ -1,4 +1,3 @@
-using AutoMapper;
 using Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using PCStore.Web.Core.Data;
@@ -6,11 +5,11 @@ using PCStore.Web.Core.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connection = builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddScoped(s => new ApplicationDBContext(connection));
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 

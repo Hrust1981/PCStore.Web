@@ -31,20 +31,20 @@ namespace PCStore.Web.Core.Controllers
                     _response.StatusCode = HttpStatusCode.BadRequest;
                     return BadRequest(_response);
                 }
-                var user = _userService.GetUserByIdAsync(id);
+                var user = await _userService.GetUserByIdAsync(id);
                 if (user == null)
                 {
                     _response.StatusCode = HttpStatusCode.NotFound;
                     return NotFound(_response);
                 }
-                _response.Result = await _userService.GetUserByIdAsync(id);
+                _response.Result = user;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
             }
             catch (Exception ex)
             {
                 _response.IsSuccess = false;
-                _response.ErrorMessages = new List<string>() { ex.ToString() };
+                _response.ErrorMessages = [ex.ToString()];
             }
             return _response;
         }
@@ -52,9 +52,26 @@ namespace PCStore.Web.Core.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> GetAllUsers()
+        public async Task<ActionResult<APIResponse>> GetAllUsers()
         {
-            return Ok(await _userService.GetAllUsersAsync());
+            try
+            {
+                var users = await _userService.GetAllUsersAsync();
+                if (users == null)
+                {
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    return BadRequest(_response);
+                }
+                _response.Result = users;
+                _response.StatusCode = HttpStatusCode.OK;
+                return Ok(_response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = [ex.ToString()];
+            }
+            return _response;
         }
 
         [HttpPost]
