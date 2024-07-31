@@ -1,4 +1,5 @@
-﻿using PCStore.Web.Core.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using PCStore.Web.Core.Data;
 using PCStore.Web.Core.Models;
 
 namespace PCStore.Web.Core.Repositories
@@ -12,7 +13,19 @@ namespace PCStore.Web.Core.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<Order> GetOrderByIdAsync(Guid id)
+        public async Task<Order> CreateAsync(Order order)
+        {
+            await _dbContext.Orders.AddAsync(order);
+            await _dbContext.SaveChangesAsync();
+            return order;
+        }
+
+        public async Task<List<Order>> GetAllAsync()
+        {
+            return await _dbContext.Orders.ToListAsync();
+        }
+
+        public async Task<Order> GetAsync(Guid id)
         {
             return await _dbContext.Orders.FindAsync(id);
         }

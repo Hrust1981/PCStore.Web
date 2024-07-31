@@ -40,14 +40,14 @@ namespace PCStore.Web.Core.Services
         public async Task<User> UpdateUserAsync(Guid id, User user)
         {
             var updatableUser = await _userRepository.GetAsync(id);
-            //updatableUser = _mapper.Map<User>(user);
-            updatableUser.Id = user.Id;
-            updatableUser.FirstName = user.FirstName;
-            updatableUser.LastName = user.LastName;
-            updatableUser.Login = user.Login;
-            updatableUser.Email = user.Email;
-            updatableUser.PhoneNumber = user.PhoneNumber;
-            return await _userRepository.UpdateAsync(updatableUser);
+            var mapper = _mapper.Map(user, updatableUser);
+            //updatableUser.Id = user.Id;
+            //updatableUser.FirstName = user.FirstName;
+            //updatableUser.LastName = user.LastName;
+            //updatableUser.Login = user.Login;
+            //updatableUser.Email = user.Email;
+            //updatableUser.PhoneNumber = user.PhoneNumber;
+            return await _userRepository.UpdateAsync(mapper);
         }
     }
 }

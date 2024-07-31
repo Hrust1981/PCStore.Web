@@ -7,22 +7,46 @@ namespace PCStore.Web.Core.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IProductService _productService;
         private readonly APIResponse _response;
 
-        public UserController(IUserService userService)
+        public ProductController(IProductService productService)
         {
-            _userService = userService;
+            _productService = productService;
             _response = new APIResponse();
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<APIResponse>> CreateProduct(Product product)
+        {
+            try
+            {
+                if (product == null)
+                {
+                    _response.StatusCode = HttpStatusCode.BadRequest;
+                    return BadRequest(_response);
+                }
+                _response.Result = await _productService.CreateProductAsync(product);
+                _response.StatusCode = HttpStatusCode.Created;
+                return Created("CreateProduct", _response);
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = [ex.ToString()];
+            }
+            return _response;
         }
 
         [HttpGet("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<APIResponse>> GetUser(Guid id)
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<APIResponse>> GetProduct(Guid id)
         {
             try
             {
@@ -31,13 +55,13 @@ namespace PCStore.Web.Core.Controllers
                     _response.StatusCode = HttpStatusCode.BadRequest;
                     return BadRequest(_response);
                 }
-                var user = await _userService.GetUserByIdAsync(id);
-                if (user == null)
+                var product = await _productService.GetProductByIdAsync(id);
+                if (product == null)
                 {
                     _response.StatusCode = HttpStatusCode.NotFound;
                     return NotFound(_response);
                 }
-                _response.Result = user;
+                _response.Result = product;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
             }
@@ -52,17 +76,17 @@ namespace PCStore.Web.Core.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<APIResponse>> GetAllUsers()
+        public async Task<ActionResult<APIResponse>> GetAllProducts()
         {
             try
             {
-                var users = await _userService.GetAllUsersAsync();
-                if (users == null)
+                var products = await _productService.GetAllProductsAsync();
+                if (products == null)
                 {
                     _response.StatusCode = HttpStatusCode.NotFound;
                     return NotFound(_response);
                 }
-                _response.Result = users;
+                _response.Result = products;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
             }
@@ -74,50 +98,26 @@ namespace PCStore.Web.Core.Controllers
             return _response;
         }
 
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<APIResponse>> CreateUser(User user)
-        {
-            try
-            {
-                if (user == null)
-                {
-                    _response.StatusCode = HttpStatusCode.BadRequest;
-                    return BadRequest(_response);
-                }   
-                _response.Result = await _userService.CreateUserAsync(user);
-                _response.StatusCode = HttpStatusCode.Created;
-                return Created("CreateUser", _response);
-            }
-            catch (Exception ex)
-            {
-                _response.IsSuccess=false;
-                _response.ErrorMessages = [ex.ToString()];
-            }
-            return _response;
-        }
-
         [HttpPut("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<APIResponse>> UpdateUser(Guid id, User user)
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<APIResponse>> UpdateProduct(Guid id, Product product)
         {
             try
             {
-                if (id == Guid.Empty || user == null)
+                if (id == Guid.Empty || product == null)
                 {
                     _response.StatusCode = HttpStatusCode.BadRequest;
                     return BadRequest(_response);
                 }
-                var updatableUser = await _userService.UpdateUserAsync(id, user);
-                if (updatableUser == null)
+                var updatableProduct = await _productService.UpdateProductAsync(id, product);
+                if (updatableProduct == null)
                 {
                     _response.StatusCode = HttpStatusCode.NotFound;
                     return NotFound(_response);
                 }
-                _response.Result = updatableUser;
+                _response.Result = updatableProduct;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
             }
@@ -131,9 +131,9 @@ namespace PCStore.Web.Core.Controllers
 
         [HttpDelete("{id:Guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<APIResponse>> DeleteUser(Guid id)
+        [ProducesResponseType (StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<APIResponse>> DeleteProduct(Guid id)
         {
             try
             {
@@ -142,13 +142,13 @@ namespace PCStore.Web.Core.Controllers
                     _response.StatusCode = HttpStatusCode.BadRequest;
                     return BadRequest(_response);
                 }
-                var deletableUser = await _userService.DeleteUserAsync(id);
-                if (!deletableUser)
+                var deletableProduct = await _productService.DeleteProductAsync(id);
+                if (!deletableProduct)
                 {
                     _response.StatusCode = HttpStatusCode.NotFound;
                     return NotFound(_response);
                 }
-                _response.Result = deletableUser;
+                _response.Result = deletableProduct;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
             }
