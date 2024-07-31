@@ -94,8 +94,8 @@ namespace PCStore.Web.Core.Controllers
                     return NotFound(_response);
                 }    
                 _response.Result = createdUser;
-                _response.StatusCode = HttpStatusCode.OK;
-                return Ok(_response);
+                _response.StatusCode = HttpStatusCode.Created;
+                return Created("CreateUser", _response);
             }
             catch (Exception ex)
             {

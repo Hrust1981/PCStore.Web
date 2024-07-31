@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\",
+  "WorkspaceRootPath": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\sharipovrr\\source\\repos\\pcstore.web\\pcstore.web.core\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\services\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\hrust\\source\\repos\\pcstore.web\\pcstore.web.core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\sharipovrr\\source\\repos\\pcstore.web\\pcstore.web.core\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\hrust\\source\\repos\\pcstore.web\\pcstore.web.core\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\hrust\\source\\repos\\pcstore.web\\pcstore.web.core\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Services\\IProductService.cs",
-              "RelativeDocumentMoniker": "PCStore.Web.Core\\Services\\IProductService.cs",
-              "ToolTip": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Services\\IProductService.cs",
-              "RelativeToolTip": "PCStore.Web.Core\\Services\\IProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAgAAAA",
+              "DocumentIndex": 2,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "PCStore.Web.Core\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "PCStore.Web.Core\\Repositories\\UserRepository.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAADwvyoAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T10:32:24.709Z",
+              "WhenOpened": "2024-07-30T17:42:46.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "PCStore.Web.Core\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Services\\UserService.cs",
+              "RelativeToolTip": "PCStore.Web.Core\\Services\\UserService.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAswCsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T17:20:54.297Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Services\\IUserService.cs",
-              "RelativeDocumentMoniker": "PCStore.Web.Core\\Services\\IUserService.cs",
-              "ToolTip": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Services\\IUserService.cs",
-              "RelativeToolTip": "PCStore.Web.Core\\Services\\IUserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "PCStore.Web.Core\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\UserController.cs",
+              "RelativeToolTip": "PCStore.Web.Core\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAG0AAAAAAAAAAAAEwHMAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T10:31:50.299Z",
+              "WhenOpened": "2024-07-30T17:04:40.034Z",
               "EditorCaption": ""
             }
           ]
