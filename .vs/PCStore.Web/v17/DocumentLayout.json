@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\",
+  "WorkspaceRootPath": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\sharipovrr\\source\\repos\\pcstore.web\\pcstore.web.core\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\hrust\\source\\repos\\pcstore.web\\pcstore.web.core\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\sharipovrr\\source\\repos\\pcstore.web\\pcstore.web.core\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\hrust\\source\\repos\\pcstore.web\\pcstore.web.core\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -32,11 +32,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "PCStore.Web.Core\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\UserController.cs",
               "RelativeToolTip": "PCStore.Web.Core\\Controllers\\UserController.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwAwAAAAYAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowAwAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-31T12:33:14.669Z",
               "EditorCaption": ""
@@ -45,11 +45,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "PCStore.Web.Core\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\OrderController.cs",
               "RelativeToolTip": "PCStore.Web.Core\\Controllers\\OrderController.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAqwC8AAAA9AAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAE0AAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-31T12:30:32.98Z",
               "EditorCaption": ""

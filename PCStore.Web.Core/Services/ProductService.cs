@@ -38,8 +38,8 @@ namespace PCStore.Web.Core.Services
         public async Task<Product> UpdateProductAsync(Guid id, Product product)
         {
             var updatableProduct = await _productRepository.GetAsync(id);
-            var mapper = _mapper.Map(product, updatableProduct);
-            return await _productRepository.UpdateAsync(mapper);
+            updatableProduct = _mapper.Map<Product>(product);
+            return await _productRepository.UpdateAsync(updatableProduct);
         }
     }
 }
