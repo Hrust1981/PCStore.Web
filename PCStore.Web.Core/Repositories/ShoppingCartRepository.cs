@@ -12,7 +12,14 @@ namespace Core.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<ShoppingCart> GetCartByIdAsync(Guid id)
+        public async Task<ShoppingCart> CreateAsync(ShoppingCart cart)
+        {
+            await _dbContext.AddAsync(cart);
+            await _dbContext.SaveChangesAsync();
+            return cart;
+        }
+
+        public async Task<ShoppingCart> GetAsync(Guid id)
         {
             return await _dbContext.ShoppingCarts.FindAsync(id);
         }

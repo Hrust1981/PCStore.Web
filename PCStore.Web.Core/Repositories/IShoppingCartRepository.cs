@@ -4,6 +4,7 @@ namespace Core.Repositories
 {
     public interface IShoppingCartRepository
     {
-        Task<ShoppingCart> GetCartByIdAsync(Guid id);
+        Task<ShoppingCart> GetAsync(Guid id);
+        Task<ShoppingCart> CreateAsync(ShoppingCart cart);
     }
 }
