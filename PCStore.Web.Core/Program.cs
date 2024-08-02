@@ -1,12 +1,15 @@
 using Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using PCStore.Web.Core.Data;
+using PCStore.Web.Core.Repositories;
 using PCStore.Web.Core.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {

@@ -1,7 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\SharipovRR\\source\\repos\\PCStore.Web\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\hrust\\source\\repos\\pcstore.web\\pcstore.web.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|c:\\users\\hrust\\source\\repos\\pcstore.web\\pcstore.web.core\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2BCF8F9-616A-4F7A-94D5-7C0DD8A17B85}|PCStore.Web.Core\\PCStore.Web.Core.csproj|solutionrelative:pcstore.web.core\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +27,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Program.cs",
+              "RelativeDocumentMoniker": "PCStore.Web.Core\\Program.cs",
+              "ToolTip": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Program.cs",
+              "RelativeToolTip": "PCStore.Web.Core\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T17:42:50.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "PCStore.Web.Core\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\Hrust\\source\\repos\\PCStore.Web\\PCStore.Web.Core\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "PCStore.Web.Core\\Controllers\\ProductController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T17:30:04.362Z",
+              "EditorCaption": ""
             }
           ]
         }

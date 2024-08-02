@@ -17,7 +17,9 @@ namespace PCStore.Web.Core.Services
 
         public async Task<Product> CreateProductAsync(Product product)
         {
-            return await _productRepository.CreateAsync(product);
+            var createdProduct = _mapper.Map<Product>(product);
+            await _productRepository.CreateAsync(createdProduct);
+            return createdProduct;
         }
 
         public async Task<bool> DeleteProductAsync(Guid id)
