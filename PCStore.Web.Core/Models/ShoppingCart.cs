@@ -14,6 +14,6 @@ namespace PCStore.Web.Core.Models
         public decimal TotalAmount { get; set; }
         public Guid OrderId { get; set; }
         public Order Order { get; set; }
-        public List<Product>? Products { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

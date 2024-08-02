@@ -27,14 +27,13 @@ namespace PCStore.Web.Core.Models
         [Required(ErrorMessage = "Не указана цена товара")]
         public decimal Price { get; set; }
 
-        public int Weight { get; set; }
+        public double Weight { get; set; }
         public string Country { get; set; }
         public int Waranty { get; set; }
 
         [Required(ErrorMessage = "Не указано общее количество товара")]
         public int Quantity { get; set; }
 
-        public Guid? ShoppingCartId { get; set; }
         public List<ShoppingCart>? ShoppingCarts { get; set; }
     }
 }

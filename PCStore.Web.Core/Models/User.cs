@@ -31,8 +31,8 @@ namespace PCStore.Web.Core.Models
         [Phone]
         public string PhoneNumber { get; set; }
 
-        public Order? Order { get; set; }
+        public List<Order>? Order { get; set; }
 
-        public DiscountCard? DiscountCard { get; set; }
+        public List<DiscountCard>? DiscountCard { get; set; }
     }
 }
