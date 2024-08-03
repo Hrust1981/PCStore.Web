@@ -2,7 +2,7 @@
 using PCStore.Web.Core.Data;
 using PCStore.Web.Core.Models;
 
-namespace Core.Repositories
+namespace PCStore.Web.Core.Repositories
 {
     public class UserRepository : IUserRepository
     {

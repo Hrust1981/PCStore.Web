@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Core.Repositories;
 using PCStore.Web.Core.Models;
+using PCStore.Web.Core.Repositories;
 
 namespace PCStore.Web.Core.Services
 {

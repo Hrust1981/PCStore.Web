@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace PCStore.Web.Core.Models
 {
@@ -25,8 +26,8 @@ namespace PCStore.Web.Core.Models
         public string Description { get; set; }
 
         [Required(ErrorMessage = "Не указана цена товара")]
+        [Precision(18, 2)]
         public decimal Price { get; set; }
-
         public double Weight { get; set; }
         public string Country { get; set; }
         public int Waranty { get; set; }

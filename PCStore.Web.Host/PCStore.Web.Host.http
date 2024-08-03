@@ -1,4 +1,4 @@
-@PCStore.Web.Host_HostAddress = http://localhost:5066
+@PCStore.Web.Host_HostAddress = http://localhost:5142
 
 GET {{PCStore.Web.Host_HostAddress}}/weatherforecast/
 Accept: application/json

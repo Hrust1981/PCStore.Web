@@ -22,6 +22,21 @@ namespace PCStore.Web.Core.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DiscountCardUser", b =>
+                {
+                    b.Property<Guid>("DiscountCardId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("DiscountCardId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("DiscountCardUser");
+                });
+
             modelBuilder.Entity("PCStore.Web.Core.Models.DiscountCard", b =>
                 {
                     b.Property<Guid>("Id")
@@ -35,14 +50,7 @@ namespace PCStore.Web.Core.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique()
-                        .HasFilter("[UserId] IS NOT NULL");
 
                     b.ToTable("Discounts");
                 });
@@ -58,6 +66,7 @@ namespace PCStore.Web.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid?>("UserId")
@@ -65,9 +74,7 @@ namespace PCStore.Web.Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique()
-                        .HasFilter("[UserId] IS NOT NULL");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Orders");
                 });
@@ -95,13 +102,11 @@ namespace PCStore.Web.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
-
-                    b.Property<Guid?>("ShoppingCartId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -110,8 +115,9 @@ namespace PCStore.Web.Core.Migrations
                     b.Property<int>("Waranty")
                         .HasColumnType("int");
 
-                    b.Property<int>("Weight")
-                        .HasColumnType("int");
+                    b.Property<double>("Weight")
+                        .HasPrecision(2, 2)
+                        .HasColumnType("float(2)");
 
                     b.HasKey("Id");
 
@@ -124,16 +130,18 @@ namespace PCStore.Web.Core.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("OrderId")
+                    b.Property<Guid?>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[OrderId] IS NOT NULL");
 
                     b.ToTable("ShoppingCarts");
                 });
@@ -188,20 +196,26 @@ namespace PCStore.Web.Core.Migrations
                     b.ToTable("ProductShoppingCart");
                 });
 
-            modelBuilder.Entity("PCStore.Web.Core.Models.DiscountCard", b =>
+            modelBuilder.Entity("DiscountCardUser", b =>
                 {
-                    b.HasOne("PCStore.Web.Core.Models.User", "User")
-                        .WithOne("DiscountCard")
-                        .HasForeignKey("PCStore.Web.Core.Models.DiscountCard", "UserId");
+                    b.HasOne("PCStore.Web.Core.Models.DiscountCard", null)
+                        .WithMany()
+                        .HasForeignKey("DiscountCardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("User");
+                    b.HasOne("PCStore.Web.Core.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("PCStore.Web.Core.Models.Order", b =>
                 {
                     b.HasOne("PCStore.Web.Core.Models.User", "User")
-                        .WithOne("Order")
-                        .HasForeignKey("PCStore.Web.Core.Models.Order", "UserId");
+                        .WithMany("Order")
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -210,9 +224,7 @@ namespace PCStore.Web.Core.Migrations
                 {
                     b.HasOne("PCStore.Web.Core.Models.Order", "Order")
                         .WithOne("ShoppingCart")
-                        .HasForeignKey("PCStore.Web.Core.Models.ShoppingCart", "OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PCStore.Web.Core.Models.ShoppingCart", "OrderId");
 
                     b.Navigation("Order");
                 });
@@ -234,13 +246,12 @@ namespace PCStore.Web.Core.Migrations
 
             modelBuilder.Entity("PCStore.Web.Core.Models.Order", b =>
                 {
-                    b.Navigation("ShoppingCart");
+                    b.Navigation("ShoppingCart")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("PCStore.Web.Core.Models.User", b =>
                 {
-                    b.Navigation("DiscountCard");
-
                     b.Navigation("Order");
                 });
 #pragma warning restore 612, 618

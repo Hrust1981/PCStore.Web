@@ -3,7 +3,7 @@ using PCStore.Web.Core.Data;
 using PCStore.Web.Core.Models;
 using PCStore.Web.Core.Repositories;
 
-namespace Core.Repositories
+namespace PCStore.Web.Core.Repositories
 {
     public class ProductRepository : IProductRepository
     {
