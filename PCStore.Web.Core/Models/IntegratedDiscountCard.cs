@@ -2,7 +2,6 @@
 {
     public class IntegratedDiscountCard : DiscountCard
     {
-        private int _discount = 15;
-        public override int Discount => _discount;
+        public new int Discount { get; } = 15;
     }
 }

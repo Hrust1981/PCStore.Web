@@ -2,7 +2,6 @@
 {
     public class TransistorDiscountCard : DiscountCard
     {
-        private int _discount = 10;
-        public override int Discount => _discount;
+        public new int Discount { get; } = 10;
     }
 }

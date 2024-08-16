@@ -1,0 +1,16 @@
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\PCStore.Web.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\PCStore.Web.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\PCStore.Web.DataAccess.AssemblyInfo.cs
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\PCStore.Web.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\PCStore.Web.DataAccess.sourcelink.json
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\bin\Debug\net8.0\PCStore.Web.DataAccess.deps.json
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\bin\Debug\net8.0\PCStore.Web.DataAccess.dll
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\bin\Debug\net8.0\PCStore.Web.DataAccess.pdb
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\bin\Debug\net8.0\PCStore.Web.Core.dll
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\bin\Debug\net8.0\PCStore.Web.Core.pdb
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\PCStore.Web.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\PCStore..C07A5DBF.Up2Date
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\PCStore.Web.DataAccess.dll
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\refint\PCStore.Web.DataAccess.dll
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\PCStore.Web.DataAccess.pdb
+C:\Users\Hrust\source\repos\PCStore.Web\PCStore.Web.DataAccess\obj\Debug\net8.0\ref\PCStore.Web.DataAccess.dll

@@ -6,19 +6,15 @@ namespace PCStore.Web.Core.Models
 {
     public class Order
     {
-        public Order()
-        {
-            Id = Guid.NewGuid();
-            Number = DateTime.Now.ToString();
-        }
-
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public string Number { get; set; }
+        [StringLength(50)]
+        public string Name { get; set; } = string.Empty;
         [Precision(18, 2)]
         public decimal TotalAmount { get; set; }
-        public Guid? UserId { get; set; }
-        public User? User { get; set; }
-        public ShoppingCart ShoppingCart { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public Guid ShoppingCartId { get; set; }
+        public ShoppingCart ShoppingCart { get; set; } = null!;
     }
 }

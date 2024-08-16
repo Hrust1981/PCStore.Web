@@ -2,8 +2,6 @@
 {
     public class CyclicDiscountCard : DiscountCard
     {
-        private int _discount;
-
         public CyclicDiscountCard()
         {
             Name = "CyclicDiscountCard";
@@ -12,11 +10,12 @@
         public CyclicDiscountCard(int discount, int totalPurchaseAmount)
         {
             Name = "CyclicDiscountCard";
-            _discount = discount;
+            Discount = discount;
             TotalPurchaseAmount = totalPurchaseAmount;
         }
 
-        public override int Discount => _discount;
+        public new int Discount { get; }
+
         public int TotalPurchaseAmount { get; set; }
     }
 }

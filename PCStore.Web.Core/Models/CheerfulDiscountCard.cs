@@ -2,14 +2,12 @@
 {
     public class CheerfulDiscountCard : DiscountCard
     {
-        private int _discount;
-
         public CheerfulDiscountCard(int discount)
         {
             Name = "CheerfulDiscountCard";
-            _discount = discount;
+            Discount = discount;
         }
 
-        public override int Discount => _discount;
+        public new int Discount { get; }
     }
 }
