@@ -1,9 +1,9 @@
-﻿namespace PCStore.Web.Core.EntitiesDTO.Output
+﻿namespace PCStore.Web.Core.ModelsDto.Output
 {
-    public class OrdersEntityDTO
+    public class OrdersDto
     {
         public Guid Id { get; set; }
-        public string Name { get; set; } = string.Empty;
+        public required string Name { get; set; }
         public decimal TotalAmount { get; set; }
         public DateTime CreatedDate { get; set; }
     }

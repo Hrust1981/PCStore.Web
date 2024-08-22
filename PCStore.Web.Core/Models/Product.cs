@@ -12,26 +12,26 @@ namespace PCStore.Web.Core.Models
 
         [Required(ErrorMessage = "Не указан тип")]
         [StringLength(50)]
-        public string Type { get; set; } = string.Empty;
+        public required string Type { get; set; }
 
         [Required(ErrorMessage = "Не указана модель")]
         [StringLength(50)]
-        public string Model { get; set; } = string.Empty;
+        public required string Model { get; set; }
 
         [Required(ErrorMessage = "Не указан код товара")]
         [StringLength(50)]
-        public string Code { get; set; } = string.Empty;
+        public required string Code { get; set; }
 
         [Required(ErrorMessage = "Заполните описание товара")]
         [StringLength(1000)]
-        public string Description { get; set; } = string.Empty;
+        public required string Description { get; set; }
 
         [Required(ErrorMessage = "Не указана цена товара")]
         [Precision(18, 2)]
         public decimal Price { get; set; }
         public double Weight { get; set; }
         [StringLength(50)]
-        public string Country { get; set; } = string.Empty;
+        public required string Country { get; set; }
         public int Guarantee { get; set; }
 
         [Required(ErrorMessage = "Не указано общее количество товара")]

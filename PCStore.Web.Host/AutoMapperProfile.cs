@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
-using PCStore.Web.Core.EntitiesDTO.Update;
+using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
+using PCStore.Web.Core.ModelsDto.Update;
 using PCStore.Web.Core.Models;
 
 namespace PCStore.Web.Host
@@ -10,27 +10,27 @@ namespace PCStore.Web.Host
     {
         public AutoMapperProfile() 
         {
-            CreateMap<User, CreateUsersEntity>().ReverseMap();
-            CreateMap<User, UpdateUsersEntity>().ReverseMap();
+            CreateMap<User, CreateUsersDto>().ReverseMap();
+            CreateMap<User, UpdateUsersDto>().ReverseMap();
 
-            CreateMap<Product, CreateProductsEntity>().ReverseMap();
-            CreateMap<Product, UpdateProductsEntity>().ReverseMap();
+            CreateMap<Product, CreateProductsDto>().ReverseMap();
+            CreateMap<Product, UpdateProductsDto>().ReverseMap();
 
-            CreateMap<Order, CreateOrdersEntity>().ReverseMap();
+            CreateMap<Order, CreateOrdersDto>().ReverseMap();
 
-            CreateMap<ShoppingCart, CreateShoppingCartsEntity>().ReverseMap();
+            CreateMap<ShoppingCart, CreateShoppingCartsDto>().ReverseMap();
 
-            CreateMap<DiscountCard, CreateDiscountCardsEntity>().ReverseMap();
+            CreateMap<DiscountCard, CreateDiscountCardsDto>().ReverseMap();
 
-            CreateMap<User, UsersEntityDTO>().ReverseMap();
+            CreateMap<User, UsersDto>().ReverseMap();
 
-            CreateMap<ShoppingCart, ShoppingCartsEntityDTO>().ReverseMap();
+            CreateMap<ShoppingCart, ShoppingCartsDto>().ReverseMap();
 
-            CreateMap<Product, ProductsEntityDTO>().ReverseMap();
+            CreateMap<Product, ProductsDto>().ReverseMap();
 
-            CreateMap<Order, OrdersEntityDTO>().ReverseMap();
+            CreateMap<Order, OrdersDto>().ReverseMap();
 
-            CreateMap<DiscountCard, DiscountCardsEntityDTO>().ReverseMap();
+            CreateMap<DiscountCard, DiscountCardsDto>().ReverseMap();
         }
     }
 }

@@ -1,20 +1,20 @@
 ﻿using AutoMapper;
 using PCStore.Web.Core.Abstractions.Users;
-using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
-using PCStore.Web.Core.EntitiesDTO.Update;
+using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
+using PCStore.Web.Core.ModelsDto.Update;
 using PCStore.Web.Core.Models;
 
 namespace PCStore.Web.Application.Services
 {
     public class UsersService(IUsersRepository userRepository, IMapper mapper) : IUsersService
     {
-        public async Task<UsersEntityDTO> CreateUserAsync(CreateUsersEntity createUser)
+        public async Task<UsersDto> CreateUserAsync(CreateUsersDto createUser)
         {
             var user = mapper.Map<User>(createUser);
             user.CreatedDate = DateTime.Now;
             await userRepository.CreateAsync(user);
-            return mapper.Map<UsersEntityDTO>(user);
+            return mapper.Map<UsersDto>(user);
         }
 
         public async Task<bool> DeleteUserAsync(Guid id)
@@ -27,24 +27,24 @@ namespace PCStore.Web.Application.Services
             return await userRepository.DeleteAsync(id);
         }
 
-        public async Task<List<UsersEntityDTO>> GetAllUsersAsync()
+        public async Task<List<UsersDto>> GetAllUsersAsync()
         {
             var users = await userRepository.GetAllAsync();
-            ICollection<UsersEntityDTO> usersDto = [];
-            foreach (var userDto in users.Select(user => mapper.Map<UsersEntityDTO>(user)))
+            ICollection<UsersDto> usersDto = [];
+            foreach (var userDto in users.Select(user => mapper.Map<UsersDto>(user)))
             {
                 usersDto.Add(userDto);
             }
             return usersDto.ToList();
         }
 
-        public async Task<UsersEntityDTO?> GetUserByIdAsync(Guid id)
+        public async Task<UsersDto?> GetUserByIdAsync(Guid id)
         {
             var user = await userRepository.GetAsync(id);
-            return mapper.Map<UsersEntityDTO>(user);
+            return mapper.Map<UsersDto>(user);
         }
 
-        public async Task<UsersEntityDTO> UpdateUserAsync(UpdateUsersEntity updateUser)
+        public async Task<UsersDto> UpdateUserAsync(UpdateUsersDto updateUser)
         {
             var updatableUser = await userRepository.GetAsync(updateUser.Id);
             if (updatableUser == null)
@@ -54,7 +54,7 @@ namespace PCStore.Web.Application.Services
             mapper.Map(updateUser, updatableUser);
             updatableUser.UpdatedDate = DateTime.Now;
             await userRepository.UpdateAsync(updatableUser);
-            return mapper.Map<UsersEntityDTO>(updatableUser);
+            return mapper.Map<UsersDto>(updatableUser);
         }
     }
 }

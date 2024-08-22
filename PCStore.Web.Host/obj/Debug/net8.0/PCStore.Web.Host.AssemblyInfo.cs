@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PCStore.Web.Host")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c977c991bacd6b42a08a2027f9daf9887b565305")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81d9fa4a5eb6c1a465575e2a59c377ddf630d7c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("PCStore.Web.Host")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PCStore.Web.Host")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

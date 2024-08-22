@@ -1,11 +1,11 @@
-﻿using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
+﻿using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
 
 namespace PCStore.Web.Core.Abstractions.ShoppingCarts
 {
     public interface IShoppingCartsService
     {
-        Task<ShoppingCartsEntityDTO?> GetShoppingCartByIdAsync(Guid id);
-        Task<ShoppingCartsEntityDTO> CreateShoppingCartAsync(CreateShoppingCartsEntity createShoppingCart);
+        Task<ShoppingCartsDto?> GetShoppingCartByIdAsync(Guid id);
+        Task<ShoppingCartsDto> CreateShoppingCartAsync(CreateShoppingCartsDto createShoppingCart);
     }
 }

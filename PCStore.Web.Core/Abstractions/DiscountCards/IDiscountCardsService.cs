@@ -1,11 +1,11 @@
-﻿using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
+﻿using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
 
 namespace PCStore.Web.Core.Abstractions.DiscountCards
 {
     public interface IDiscountCardsService
     {
-        Task<DiscountCardsEntityDTO?> GetDiscountCardByIdAsync(Guid id);
-        Task<DiscountCardsEntityDTO> CreateDiscountCardAsync(CreateDiscountCardsEntity createDiscountCard);
+        Task<DiscountCardsDto?> GetDiscountCardByIdAsync(Guid id);
+        Task<DiscountCardsDto> CreateDiscountCardAsync(CreateDiscountCardsDto createDiscountCard);
     }
 }

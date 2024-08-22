@@ -10,7 +10,7 @@ namespace PCStore.Web.Core.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         [StringLength(50)]
-        public string Name { get; set; } = string.Empty;
+        public required string Name { get; set; }
         [Precision(18, 2)]
         public decimal TotalAmount { get; set; }
         public DateTime CreatedDate { get; set; }

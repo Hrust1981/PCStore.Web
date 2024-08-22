@@ -1,12 +1,12 @@
-﻿using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
+﻿using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
 
 namespace PCStore.Web.Core.Abstractions.Orders
 {
     public interface IOrdersService
     {
-        Task<OrdersEntityDTO?> GetOrderByIdAsync(Guid id);
-        Task<List<OrdersEntityDTO>> GetAllOrdersAsync();
-        Task<OrdersEntityDTO> CreateOrderAsync(CreateOrdersEntity createOrder);
+        Task<OrdersDto?> GetOrderByIdAsync(Guid id);
+        Task<List<OrdersDto>> GetAllOrdersAsync();
+        Task<OrdersDto> CreateOrderAsync(CreateOrdersDto createOrder);
     }
 }

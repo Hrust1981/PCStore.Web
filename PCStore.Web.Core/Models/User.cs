@@ -11,28 +11,28 @@ namespace PCStore.Web.Core.Models
 
         [Required(ErrorMessage = "Не указано имя")]
         [StringLength(50, MinimumLength = 2)]
-        public string FirstName { get; set; } = string.Empty;
+        public required string FirstName { get; set; }
 
         [Required(ErrorMessage = "Не указана фамилия")]
         [StringLength(50, MinimumLength = 2)]
-        public string LastName { get; set; } = string.Empty;
+        public required string LastName { get; set; }
 
         [Required(ErrorMessage = "Не указан логин")]
         [StringLength(50)]
-        public string Login { get; set; } = string.Empty;
+        public required string Login { get; set; }
 
         [Required(ErrorMessage = "Введите пароль")]
         [StringLength(250)]
-        public string Password { get; set; } = string.Empty;
+        public required string Password { get; set; }
 
         [Required(ErrorMessage = "Не указан email")]
         [DataType(DataType.EmailAddress)]
         [StringLength(250)]
-        public string Email { get; set; } = string.Empty;
+        public required string Email { get; set; }
 
         [DataType(DataType.PhoneNumber)]
         [StringLength(50)]
-        public string PhoneNumber { get; set; } = string.Empty;
+        public required string PhoneNumber { get; set; }
 
         public DateTime CreatedDate { get; set; }
 

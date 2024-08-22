@@ -1,8 +1,8 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using PCStore.Web.Core.Abstractions.DiscountCards;
-using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
+using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
 
 namespace PCStore.Web.Host.Controllers
 {
@@ -19,7 +19,7 @@ namespace PCStore.Web.Host.Controllers
         /// <response code="200">Ok</response>
         /// <response code="404">Not Found</response>
         [HttpGet("{id:guid}")]
-        public async Task<ActionResult<DiscountCardsEntityDTO>> GetDiscountCard(Guid id)
+        public async Task<ActionResult<DiscountCardsDto>> GetDiscountCard(Guid id)
         {
             var discountCard = await discountCardService.GetDiscountCardByIdAsync(id);
             if (discountCard == null)
@@ -36,7 +36,7 @@ namespace PCStore.Web.Host.Controllers
         /// <returns>Discount card</returns>
         /// <response code="200">Ok</response>
         [HttpPost]
-        public async Task<ActionResult<DiscountCardsEntityDTO>> CreateDiscountCard([FromBody] CreateDiscountCardsEntity createDiscountCard)
+        public async Task<ActionResult<DiscountCardsDto>> CreateDiscountCard([FromBody] CreateDiscountCardsDto createDiscountCard)
         {
             var discountCard = await discountCardService.CreateDiscountCardAsync(createDiscountCard);
             return Ok(discountCard);

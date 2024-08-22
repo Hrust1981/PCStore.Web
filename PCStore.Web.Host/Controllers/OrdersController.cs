@@ -1,8 +1,8 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using PCStore.Web.Core.Abstractions.Orders;
-using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
+using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
 
 namespace PCStore.Web.Host.Controllers
 {
@@ -16,7 +16,7 @@ namespace PCStore.Web.Host.Controllers
         /// </summary>
         /// <response code="200">Ok</response>
         [HttpPost]
-        public async Task<ActionResult<OrdersEntityDTO>> CreateOrder([FromBody] CreateOrdersEntity createOrder)
+        public async Task<ActionResult<OrdersDto>> CreateOrder([FromBody] CreateOrdersDto createOrder)
         {
             var createdOrder = await orderService.CreateOrderAsync(createOrder);
             return Ok(createdOrder);
@@ -28,7 +28,7 @@ namespace PCStore.Web.Host.Controllers
         /// <response code="200">Ok</response>
         /// <response code="404">Not Found</response>
         [HttpGet("{id:guid}")]
-        public async Task<ActionResult<OrdersEntityDTO>> GetOrder(Guid id)
+        public async Task<ActionResult<OrdersDto>> GetOrder(Guid id)
         {
             var order = await orderService.GetOrderByIdAsync(id);
             if (order == null)
@@ -43,7 +43,7 @@ namespace PCStore.Web.Host.Controllers
         /// </summary>
         /// <response code="200">Ok</response>
         [HttpGet]
-        public async Task<ActionResult<OrdersEntityDTO>> GetAllOrders()
+        public async Task<ActionResult<OrdersDto>> GetAllOrders()
         {
             var orders = await orderService.GetAllOrdersAsync();
             return Ok(orders);

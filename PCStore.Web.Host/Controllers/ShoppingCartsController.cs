@@ -1,8 +1,8 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using PCStore.Web.Core.Abstractions.ShoppingCarts;
-using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
+using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
 
 namespace PCStore.Web.Host.Controllers
 {
@@ -17,7 +17,7 @@ namespace PCStore.Web.Host.Controllers
         /// <response code="200">Ok</response>
         /// <response code="404">Not Found</response>
         [HttpGet("{id:guid}")]
-        public async Task<ActionResult<ShoppingCartsEntityDTO>> GetShoppingCart(Guid id)
+        public async Task<ActionResult<ShoppingCartsDto>> GetShoppingCart(Guid id)
         {
             var shoppingCart = await shoppingCartService.GetShoppingCartByIdAsync(id);
             if (shoppingCart == null)
@@ -33,7 +33,7 @@ namespace PCStore.Web.Host.Controllers
         /// </summary>
         /// <response code="200">Ok</response>
         [HttpPost]
-        public async Task<ActionResult<ShoppingCartsEntityDTO>> CreateShoppingCart([FromBody] CreateShoppingCartsEntity createShoppingCart)
+        public async Task<ActionResult<ShoppingCartsDto>> CreateShoppingCart([FromBody] CreateShoppingCartsDto createShoppingCart)
         {
             var shoppingCartCreated = await shoppingCartService.CreateShoppingCartAsync(createShoppingCart);
             return Ok(shoppingCartCreated);

@@ -13,7 +13,7 @@
             <response code="200">Ok</response>
             <response code="404">Not Found</response>
         </member>
-        <member name="M:PCStore.Web.Host.Controllers.DiscountCardsController.CreateDiscountCard(PCStore.Web.Core.EntitiesDTO.Create.CreateDiscountCardsEntity)">
+        <member name="M:PCStore.Web.Host.Controllers.DiscountCardsController.CreateDiscountCard(PCStore.Web.Core.ModelsDto.Create.CreateDiscountCardsDto)">
             <summary>
             Create a discount card
             </summary>
@@ -21,7 +21,7 @@
             <returns>Discount card</returns>
             <response code="200">Ok</response>
         </member>
-        <member name="M:PCStore.Web.Host.Controllers.OrdersController.CreateOrder(PCStore.Web.Core.EntitiesDTO.Create.CreateOrdersEntity)">
+        <member name="M:PCStore.Web.Host.Controllers.OrdersController.CreateOrder(PCStore.Web.Core.ModelsDto.Create.CreateOrdersDto)">
             <summary>
             
             </summary>
@@ -40,7 +40,7 @@
             </summary>
             <response code="200">Ok</response>
         </member>
-        <member name="M:PCStore.Web.Host.Controllers.ProductsController.CreateProduct(PCStore.Web.Core.EntitiesDTO.Create.CreateProductsEntity)">
+        <member name="M:PCStore.Web.Host.Controllers.ProductsController.CreateProduct(PCStore.Web.Core.ModelsDto.Create.CreateProductsDto)">
             <summary>
             
             </summary>
@@ -59,7 +59,7 @@
             </summary>
             <response code="200">Ok</response>
         </member>
-        <member name="M:PCStore.Web.Host.Controllers.ProductsController.UpdateProduct(PCStore.Web.Core.EntitiesDTO.Update.UpdateProductsEntity)">
+        <member name="M:PCStore.Web.Host.Controllers.ProductsController.UpdateProduct(PCStore.Web.Core.ModelsDto.Update.UpdateProductsDto)">
             <summary>
             
             </summary>
@@ -80,7 +80,7 @@
             <response code="200">Ok</response>
             <response code="404">Not Found</response>
         </member>
-        <member name="M:PCStore.Web.Host.Controllers.ShoppingCartsController.CreateShoppingCart(PCStore.Web.Core.EntitiesDTO.Create.CreateShoppingCartsEntity)">
+        <member name="M:PCStore.Web.Host.Controllers.ShoppingCartsController.CreateShoppingCart(PCStore.Web.Core.ModelsDto.Create.CreateShoppingCartsDto)">
             <summary>
             
             </summary>
@@ -99,13 +99,13 @@
             </summary>
             <response code="200">Ok</response>
         </member>
-        <member name="M:PCStore.Web.Host.Controllers.UsersController.CreateUser(PCStore.Web.Core.EntitiesDTO.Create.CreateUsersEntity)">
+        <member name="M:PCStore.Web.Host.Controllers.UsersController.CreateUser(PCStore.Web.Core.ModelsDto.Create.CreateUsersDto)">
             <summary>
             
             </summary>
             <response code="200">Ok</response>
         </member>
-        <member name="M:PCStore.Web.Host.Controllers.UsersController.UpdateUser(PCStore.Web.Core.EntitiesDTO.Update.UpdateUsersEntity)">
+        <member name="M:PCStore.Web.Host.Controllers.UsersController.UpdateUser(PCStore.Web.Core.ModelsDto.Update.UpdateUsersDto)">
             <summary>
             
             </summary>

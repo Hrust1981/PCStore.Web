@@ -1,15 +1,15 @@
-﻿using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
-using PCStore.Web.Core.EntitiesDTO.Update;
+﻿using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
+using PCStore.Web.Core.ModelsDto.Update;
 
 namespace PCStore.Web.Core.Abstractions.Users
 {
     public interface IUsersService
     {
-        Task<UsersEntityDTO?> GetUserByIdAsync(Guid id);
-        Task<List<UsersEntityDTO>> GetAllUsersAsync();
-        Task<UsersEntityDTO> CreateUserAsync(CreateUsersEntity createUser);
-        Task<UsersEntityDTO> UpdateUserAsync(UpdateUsersEntity updateUser);
+        Task<UsersDto?> GetUserByIdAsync(Guid id);
+        Task<List<UsersDto>> GetAllUsersAsync();
+        Task<UsersDto> CreateUserAsync(CreateUsersDto createUser);
+        Task<UsersDto> UpdateUserAsync(UpdateUsersDto updateUser);
         Task<bool> DeleteUserAsync(Guid id);
     }
 }

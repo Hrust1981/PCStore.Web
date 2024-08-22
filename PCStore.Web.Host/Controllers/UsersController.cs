@@ -1,9 +1,9 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using PCStore.Web.Core.Abstractions.Users;
-using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
-using PCStore.Web.Core.EntitiesDTO.Update;
+using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
+using PCStore.Web.Core.ModelsDto.Update;
 
 namespace PCStore.Web.Host.Controllers
 {
@@ -18,7 +18,7 @@ namespace PCStore.Web.Host.Controllers
         /// <response code="200">Ok</response>
         /// <response code="404">Not Found</response>
         [HttpGet("{id:guid}")]
-        public async Task<ActionResult<UsersEntityDTO>> GetUser(Guid id)
+        public async Task<ActionResult<UsersDto>> GetUser(Guid id)
         {
             var user = await userService.GetUserByIdAsync(id);
             if (user == null)
@@ -33,7 +33,7 @@ namespace PCStore.Web.Host.Controllers
         /// </summary>
         /// <response code="200">Ok</response>
         [HttpGet]
-        public async Task<ActionResult<UsersEntityDTO>> GetAllUsers()
+        public async Task<ActionResult<UsersDto>> GetAllUsers()
         {
             var users = await userService.GetAllUsersAsync();
             return Ok(users);
@@ -44,7 +44,7 @@ namespace PCStore.Web.Host.Controllers
         /// </summary>
         /// <response code="200">Ok</response>
         [HttpPost]
-        public async Task<ActionResult<UsersEntityDTO>> CreateUser([FromBody] CreateUsersEntity createUser)
+        public async Task<ActionResult<UsersDto>> CreateUser([FromBody] CreateUsersDto createUser)
         {
             var user = await userService.CreateUserAsync(createUser);
             return Ok(user);
@@ -56,7 +56,7 @@ namespace PCStore.Web.Host.Controllers
         /// <response code="200">Ok</response>
         /// <response code="404">Not Found</response>
         [HttpPut]
-        public async Task<ActionResult<UsersEntityDTO>> UpdateUser([FromBody] UpdateUsersEntity updateUser)
+        public async Task<ActionResult<UsersDto>> UpdateUser([FromBody] UpdateUsersDto updateUser)
         {
             var user = await userService.GetUserByIdAsync(updateUser.Id);
             if (user == null)

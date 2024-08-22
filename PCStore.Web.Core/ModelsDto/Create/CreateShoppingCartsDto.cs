@@ -1,6 +1,6 @@
-﻿namespace PCStore.Web.Core.EntitiesDTO.Create
+﻿namespace PCStore.Web.Core.ModelsDto.Create
 {
-    public class CreateShoppingCartsEntity
+    public class CreateShoppingCartsDto
     {
         public decimal TotalAmount { get; set; }
         public DateTime CreatedDate { get; set; }

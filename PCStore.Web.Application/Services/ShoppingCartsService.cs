@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using PCStore.Web.Core.Abstractions.ShoppingCarts;
-using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
+using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
 using PCStore.Web.Core.Models;
 
 namespace PCStore.Web.Application.Services
@@ -9,18 +9,18 @@ namespace PCStore.Web.Application.Services
     public class ShoppingCartsService(IShoppingCartsRepository shoppingCartRepository, IMapper mapper)
         : IShoppingCartsService
     {
-        public async Task<ShoppingCartsEntityDTO> CreateShoppingCartAsync(CreateShoppingCartsEntity createShoppingCart)
+        public async Task<ShoppingCartsDto> CreateShoppingCartAsync(CreateShoppingCartsDto createShoppingCart)
         {
             var createdShoppingCart = mapper.Map<ShoppingCart>(createShoppingCart);
             createdShoppingCart.CreatedDate = DateTime.Now;
             await shoppingCartRepository.CreateAsync(createdShoppingCart);
-            return mapper.Map<ShoppingCartsEntityDTO>(createdShoppingCart);
+            return mapper.Map<ShoppingCartsDto>(createdShoppingCart);
         }
 
-        public async Task<ShoppingCartsEntityDTO?> GetShoppingCartByIdAsync(Guid id)
+        public async Task<ShoppingCartsDto?> GetShoppingCartByIdAsync(Guid id)
         {
              var shoppingCart = await shoppingCartRepository.GetAsync(id);
-             return mapper.Map<ShoppingCartsEntityDTO>(shoppingCart);
+             return mapper.Map<ShoppingCartsDto>(shoppingCart);
         }
     }
 }

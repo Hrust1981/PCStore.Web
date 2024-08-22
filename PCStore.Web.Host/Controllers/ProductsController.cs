@@ -1,9 +1,9 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using PCStore.Web.Core.Abstractions.Products;
-using PCStore.Web.Core.EntitiesDTO.Create;
-using PCStore.Web.Core.EntitiesDTO.Output;
-using PCStore.Web.Core.EntitiesDTO.Update;
+using PCStore.Web.Core.ModelsDto.Create;
+using PCStore.Web.Core.ModelsDto.Output;
+using PCStore.Web.Core.ModelsDto.Update;
 
 namespace PCStore.Web.Host.Controllers
 {
@@ -17,7 +17,7 @@ namespace PCStore.Web.Host.Controllers
         /// </summary>
         /// <response code="200">Ok</response>
         [HttpPost]
-        public async Task<ActionResult<ProductsEntityDTO>> CreateProduct([FromBody] CreateProductsEntity createProduct)
+        public async Task<ActionResult<ProductsDto>> CreateProduct([FromBody] CreateProductsDto createProduct)
         {
             var product = await productService.CreateProductAsync(createProduct);
             return Ok(product);
@@ -29,7 +29,7 @@ namespace PCStore.Web.Host.Controllers
         /// <response code="200">Ok</response>
         /// <response code="404">Not Found</response>
         [HttpGet("{id:guid}")]
-        public async Task<ActionResult<ProductsEntityDTO>> GetProduct(Guid id)
+        public async Task<ActionResult<ProductsDto>> GetProduct(Guid id)
         {
             var product = await productService.GetProductByIdAsync(id);
             if (product == null)
@@ -44,7 +44,7 @@ namespace PCStore.Web.Host.Controllers
         /// </summary>
         /// <response code="200">Ok</response>
         [HttpGet]
-        public async Task<ActionResult<ProductsEntityDTO>> GetAllProducts()
+        public async Task<ActionResult<ProductsDto>> GetAllProducts()
         {
             var products = await productService.GetAllProductsAsync();
             return Ok(products);
@@ -56,7 +56,7 @@ namespace PCStore.Web.Host.Controllers
         /// <response code="200">Ok</response>
         /// <response code="404">Not Found</response>
         [HttpPut]
-        public async Task<ActionResult<ProductsEntityDTO>> UpdateProduct([FromBody] UpdateProductsEntity updateProduct)
+        public async Task<ActionResult<ProductsDto>> UpdateProduct([FromBody] UpdateProductsDto updateProduct)
         {
             var product = await productService.GetProductByIdAsync(updateProduct.Id);
             if (product == null)
