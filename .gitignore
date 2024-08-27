@@ -367,4 +367,4 @@ FodyWeavers.xsd
 /PCStore.Web.Application/obj/*
 
 .github
-.vs
+/.vs
