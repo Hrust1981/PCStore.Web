@@ -363,15 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 
-/PCStore.Web.Application/bin/
-/PCStore.Web.Application/obj/
 
-/PCStore.Web.Core/bin/
-/PCStore.Web.Core/obj/
-
-/PCStore.Web.DataAccess/bin/
-/PCStore.Web.DataAccess/obj/
-
-/PCStore.Web.Host/bin/
-/PCStore.Web.Host/obj/
-
+/*/*bin/
+/*/*obj/
