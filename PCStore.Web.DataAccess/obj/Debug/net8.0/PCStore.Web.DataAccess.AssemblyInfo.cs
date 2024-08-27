@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PCStore.Web.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+463ca610b1515718db47f73ad710330c62b626d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cb818ad57d7149905fbad20a16430cb55bfde2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PCStore.Web.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PCStore.Web.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
