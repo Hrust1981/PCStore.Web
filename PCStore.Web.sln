@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCStore.Web.Core", "PCStore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCStore.Web.Host", "PCStore.Web.Host\PCStore.Web.Host.csproj", "{7D6B37A6-89C1-41D8-99E8-261A222A410F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCStore.Web.Application", "PCStore.Web.Application\PCStore.Web.Application.csproj", "{FE9B7E5C-82BC-402B-AFEC-A1ADFB0B1E3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCStore.Web.Application", "PCStore.Web.Application\PCStore.Web.Application.csproj", "{FE9B7E5C-82BC-402B-AFEC-A1ADFB0B1E3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCStore.Web.DataAccess", "PCStore.Web.DataAccess\PCStore.Web.DataAccess.csproj", "{7A3AB2F6-B517-4184-A6A0-70F2CC7D11C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCStore.Web.DataAccess", "PCStore.Web.DataAccess\PCStore.Web.DataAccess.csproj", "{7A3AB2F6-B517-4184-A6A0-70F2CC7D11C7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{307FE7CB-2E5D-4B25-8EC4-9BC98620E78E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7A3AB2F6-B517-4184-A6A0-70F2CC7D11C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A3AB2F6-B517-4184-A6A0-70F2CC7D11C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A3AB2F6-B517-4184-A6A0-70F2CC7D11C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{307FE7CB-2E5D-4B25-8EC4-9BC98620E78E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{307FE7CB-2E5D-4B25-8EC4-9BC98620E78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{307FE7CB-2E5D-4B25-8EC4-9BC98620E78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{307FE7CB-2E5D-4B25-8EC4-9BC98620E78E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

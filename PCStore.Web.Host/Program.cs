@@ -1,5 +1,7 @@
 using Asp.Versioning;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using PCStore.Web.Application.Extensions;
 using PCStore.Web.Application.Services;
 using PCStore.Web.Core.Abstractions.DiscountCards;
 using PCStore.Web.Core.Abstractions.Orders;
@@ -27,11 +29,26 @@ public class Program
         builder.Services.AddScoped<IDiscountCardsService, DiscountCardsService>();
         builder.Services.AddScoped<IDiscountCardsRepository, DiscountCardsRepository>();
 
+        var connectionString = builder.Configuration.GetConnectionString("ConnectionMySQL");
+        var redisConnectionString = builder.Configuration.GetConnectionString("RedisCache");
+
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
         {
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         });
+
+        builder.Services.AddStackExchangeRedisOutputCache(options => options.Configuration = redisConnectionString);
+
+        builder.Services.AddOutputCache(options =>
+        {
+            options.AddBasePolicy(x
+                => x.Expire(TimeSpan.FromSeconds(20)));
+        });
+
+        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
+
+        builder.Services.AddAuthorization();
 
         builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
@@ -68,7 +85,11 @@ public class Program
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+
+            app.ApplyMigrations();
         }
+
+        app.UseOutputCache();
 
         app.UseHttpsRedirection();
 

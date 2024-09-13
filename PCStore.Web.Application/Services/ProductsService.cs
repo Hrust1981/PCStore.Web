@@ -19,23 +19,13 @@ namespace PCStore.Web.Application.Services
 
         public async Task<bool> DeleteProductAsync(Guid id)
         {
-            var deletableProduct = await productRepository.GetAsync(id);
-            if (deletableProduct == null)
-            {
-                throw new Exception("Product not found");
-            }
             return await productRepository.DeleteAsync(id);
         }
 
         public async Task<List<ProductsDto>> GetAllProductsAsync()
         {
             var products = await productRepository.GetAllAsync();
-            ICollection<ProductsDto> productsDto = [];
-            foreach (var productDto in products.Select(product => mapper.Map<ProductsDto>(product)))
-            {
-                productsDto.Add(productDto);
-            }
-            return productsDto.ToList();
+            return products.Select(product => mapper.Map<ProductsDto>(product)).ToList();
         }
 
         public async Task<ProductsDto?> GetProductByIdAsync(Guid id)
@@ -47,12 +37,8 @@ namespace PCStore.Web.Application.Services
         public async Task<ProductsDto> UpdateProductAsync(UpdateProductsDto updateProduct)
         {
             var updatableProduct = await productRepository.GetAsync(updateProduct.Id);
-            if (updatableProduct == null)
-            {
-                throw new Exception("Product not found");
-            }
             mapper.Map(updateProduct, updatableProduct);
-            updatableProduct.UpdatedDate = DateTime.Now;
+            updatableProduct!.UpdatedDate = DateTime.Now;
             await productRepository.UpdateAsync(updatableProduct);
             return mapper.Map<ProductsDto>(updatableProduct);
         }

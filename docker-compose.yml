@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  pcstore.web.host:
+    container_name: pcstore.web
+    image: ${DOCKER_REGISTRY-}pcstorewebhost
+    build:
+      context: .
+      dockerfile: PCStore.Web.Host/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5001
+  
+
+  pcstore.database:
+    image: mysql:latest
+    container_name: pcstore.database
+    environment:
+      MYSQL_DATABASE: pcstore
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+  
+
+  pcstore.cache:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"

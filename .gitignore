@@ -363,8 +363,9 @@ MigrationBackup/
 FodyWeavers.xsd
 
 
-/PCStore.Web.Application/bin/*
-/PCStore.Web.Application/obj/*
+*/bin/
+*/obj/
 
 .github
-/.vs
+.vs
+/data

@@ -1,4 +1,5 @@
 ﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PCStore.Web.Core.Abstractions.Users;
 using PCStore.Web.Core.ModelsDto.Create;
@@ -17,7 +18,7 @@ namespace PCStore.Web.Host.Controllers
         /// </summary>
         /// <response code="200">Ok</response>
         /// <response code="404">Not Found</response>
-        [HttpGet("{id:guid}")]
+        [HttpGet("{id:guid}"), Authorize]
         public async Task<ActionResult<UsersDto>> GetUser(Guid id)
         {
             var user = await userService.GetUserByIdAsync(id);
@@ -75,11 +76,12 @@ namespace PCStore.Web.Host.Controllers
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<bool>> DeleteUser(Guid id)
         {
-            var isUserDeleted = await userService.DeleteUserAsync(id);
-            if (!isUserDeleted)
+            var user = await userService.GetUserByIdAsync(id);
+            if (user == null)
             {
                 return NotFound();
             }
+            var isUserDeleted = await userService.DeleteUserAsync(id);
             return Ok(isUserDeleted);
         }
     }

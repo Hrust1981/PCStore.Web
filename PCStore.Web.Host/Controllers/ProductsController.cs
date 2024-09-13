@@ -75,11 +75,12 @@ namespace PCStore.Web.Host.Controllers
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<bool>> DeleteProduct(Guid id)
         {
-            var isProductDeleted = await productService.DeleteProductAsync(id);
-            if (!isProductDeleted)
+            var product = await productService.GetProductByIdAsync(id);
+            if (product == null)
             {
                 return NotFound();
             }
+            var isProductDeleted = await productService.DeleteProductAsync(id);
             return Ok(isProductDeleted);
         }
     }

@@ -19,12 +19,7 @@ namespace PCStore.Web.Application.Services
         public async Task<List<OrdersDto>> GetAllOrdersAsync()
         {
             var orders = await orderRepository.GetAllAsync();
-            ICollection<OrdersDto> ordersDto = [];
-            foreach (var orderDto in orders.Select(order => mapper.Map<OrdersDto>(order)))
-            {
-                ordersDto.Add(orderDto);
-            }
-            return ordersDto.ToList();
+            return orders.Select(order => mapper.Map<OrdersDto>(order)).ToList();
         }
 
         public async Task<OrdersDto?> GetOrderByIdAsync(Guid id)

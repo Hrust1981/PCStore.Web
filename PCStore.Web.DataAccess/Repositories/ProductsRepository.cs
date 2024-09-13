@@ -16,11 +16,7 @@ namespace PCStore.Web.DataAccess.Repositories
         public async Task<bool> DeleteAsync(Guid id)
         {
             var product = await GetAsync(id);
-            if (product == null)
-            {
-                return false;
-            }
-            dBContext.Products.Remove(product);
+            dBContext.Products.Remove(product!);
             await dBContext.SaveChangesAsync();
             return true;
         }
